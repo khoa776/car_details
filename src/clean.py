@@ -44,8 +44,5 @@ def main():
     df = handle_duplicate(df)
     df = valid_value(df)
     df.to_csv('../data/processed/clean_Car_details.csv', index = False)
-    #pd.set_option('display.max_columns', None)
-    #print(df.head(-10))
-    #print(df[['fuel','mileage_unit']].head(10))
 if __name__ == '__main__':
     main()
