@@ -7,11 +7,15 @@ def extract_numeric(df):
     return df
 
 def change_types(df):
-    df['max_power'] = pd.to_numeric(df['max_power'], errors='coerce')
+    columns = ['selling_price','max_power','engine','mileage','year','seats','km_driven']
+    for column in columns:
+        df[column] = pd.to_numeric(df[column], errors='coerce')
+
+    '''df['max_power'] = pd.to_numeric(df['max_power'], errors='coerce')
     df['engine'] = pd.to_numeric(df['engine'], errors='coerce')
     df['mileage'] = pd.to_numeric(df['mileage'], errors='coerce')
     df['year'] = pd.to_numeric(df['year'],errors='coerce')
-    df['seats'] = pd.to_numeric(df['seats'], errors='coerce')
+    df['seats'] = pd.to_numeric(df['seats'], errors='coerce')'''
     return df
 
 def handle_missing(df):
